@@ -2,9 +2,7 @@
 
 # Base class for jobs
 class BaseJob
-  def initialize; end
-
-  %w[
+  REQUIRED_METHODS = %w[
     input
     input_formatter
     reporter
@@ -13,7 +11,11 @@ class BaseJob
     reducer_output_collector
     reducer
     mapper
-  ].each do |method_name|
+  ].freeze
+
+  def initialize; end
+
+  REQUIRED_METHODS.each do |method_name|
     define_method(method_name) do
       raise "You must define #{method_name} method in your job class"
     end
