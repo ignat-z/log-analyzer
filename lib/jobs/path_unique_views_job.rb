@@ -15,40 +15,25 @@ class PathUniqueViewsJob < BaseJob
     result.each { |path, count| puts "#{path} #{count} unique visits" }
   end
 
-  def initialize(path)
+  DESCRIPTION = {
+    input_formatter: ReadlinesFormatter.new,
+    output_formatter: ByValueFormatter.new(order: :desc),
+    mapper_output_collector: SetCollector.new,
+    reducer_output_collector: SingleValueCollector.new,
+    reducer: ValuesLengthReducer.new,
+    mapper: SplittedStringValueMapper.new,
+    reporter: UNIQUE_VISITS_REPORTER
+  }.freeze
+
+  def initialize(path, description = DESCRIPTION)
     super()
     @path = path
+    parse_description!(description)
   end
 
-  def input
-    FileInput.new.call(@path)
-  end
+  attr_reader(*DESCRIPTION.keys)
 
-  def input_formatter
-    @input_formatter ||= ReadlinesFormatter.new
-  end
-
-  def reporter
-    @reporter ||= UNIQUE_VISITS_REPORTER
-  end
-
-  def output_formatter
-    @output_formatter ||= ByValueFormatter.new(order: :desc)
-  end
-
-  def mapper_output_collector
-    @mapper_output_collector ||= SetCollector.new
-  end
-
-  def reducer_output_collector
-    @reducer_output_collector ||= SingleValueCollector.new
-  end
-
-  def reducer
-    @reducer ||= ValuesLengthReducer.new
-  end
-
-  def mapper
-    @mapper ||= SplittedStringValueMapper.new
+  def input(reader: FileInput.new)
+    reader.call(@path)
   end
 end

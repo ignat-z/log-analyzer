@@ -15,6 +15,12 @@ class BaseJob
 
   def initialize; end
 
+  def parse_description!(description)
+    description.each do |method, value|
+      instance_variable_set("@#{method}", value)
+    end
+  end
+
   REQUIRED_METHODS.each do |method_name|
     define_method(method_name) do
       raise "You must define #{method_name} method in your job class"
