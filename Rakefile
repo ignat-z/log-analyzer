@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rake/testtask'
+require 'rubocop'
 require 'rubocop/rake_task'
 
 Rake::TestTask.new(:test) do |t|

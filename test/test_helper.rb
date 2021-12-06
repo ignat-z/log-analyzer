@@ -13,6 +13,11 @@ SimpleCov.start do
   add_group 'Reducers', 'lib/reducers'
 end
 
+if ENV['CODECOV_TOKEN']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 require 'minitest/autorun'
 require 'minitest/hell'
 
