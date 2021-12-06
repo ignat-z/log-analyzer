@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './test/test_helper'
-require './lib/collectors/set_collector'
+require 'test_helper'
+require 'collectors/set_collector'
 
 describe SetCollector do
   describe '#queues' do

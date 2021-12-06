@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './test/test_helper'
-require './lib/reducers/values_sum_reducer'
+require 'test_helper'
+require 'reducers/values_sum_reducer'
 
 describe ValuesSumReducer do
   describe '#call' do

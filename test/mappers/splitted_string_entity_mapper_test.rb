@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './test/test_helper'
+require 'test_helper'
 require 'mappers/splitted_string_entity_mapper'
 
 describe SplittedStringEntityMapper do

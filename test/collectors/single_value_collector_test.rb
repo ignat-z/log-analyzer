@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './test/test_helper'
-require './lib/collectors/single_value_collector'
+require 'test_helper'
+require 'collectors/single_value_collector'
 
 describe SingleValueCollector do
   describe '#queues' do

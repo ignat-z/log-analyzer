@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './test/test_helper'
+require 'test_helper'
 require 'input_formatters/readlines_formatter'
 
 describe ReadlinesFormatter do

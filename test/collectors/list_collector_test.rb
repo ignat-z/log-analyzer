@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './test/test_helper'
-require './lib/collectors/list_collector'
+require 'test_helper'
+require 'collectors/list_collector'
 
 describe ListCollector do
   describe '#queues' do
