@@ -1,7 +1,11 @@
+# Log Analyzer
+
+This app is a simple log analyzer. It uses [MapReduce model](<https://en.wikipedia.org/wiki/MapReduce>) to process data. It provides reusable components to combine them into a MapReduce pipeline. It's not parallelized but can be.
+
 ## Running
 
 ```bash
-./parser.rb webserver.log
+./bin/parser.rb data/webserver.log
 ```
 
 ## Requirements
