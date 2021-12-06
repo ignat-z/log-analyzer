@@ -11,11 +11,12 @@ class Runner
   end
 
   def call
-    job1 = PathViewsJob.new(@path)
-    job2 = PathUniqueViewsJob.new(@path)
-
-    JobRunner.new(job1).call
-    puts
-    JobRunner.new(job2).call
+    [
+      PathViewsJob.new(@path),
+      PathUniqueViewsJob.new(@path)
+    ].each do |job|
+      JobRunner.new(job).call
+      puts
+    end
   end
 end
