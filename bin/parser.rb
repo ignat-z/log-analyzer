@@ -13,4 +13,5 @@ if arguments.empty?
   exit
 end
 
-puts arguments[0]
+require './lib/runner'
+Runner.new(arguments[0]).call
