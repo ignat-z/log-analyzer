@@ -2,8 +2,10 @@
 
 # Sorts passed hash by value accordin to the passed order
 class ByValueFormatter
+  SUPPORTED_ORDERS = %w[asc desc].freeze
+
   def initialize(order:)
-    raise ArgumentError, 'Only asc and desc orders allowed' unless %w[asc desc].include?(order.to_s)
+    raise ArgumentError, 'Only asc and desc orders allowed' unless SUPPORTED_ORDERS.include?(order.to_s)
 
     @order = order
   end
