@@ -1,5 +1,7 @@
 # Log Analyzer
 
+[![Ruby](https://github.com/ignat-z/log-analyzer/actions/workflows/ruby.yml/badge.svg)](https://github.com/ignat-z/log-analyzer/actions/workflows/ruby.yml) [![codecov](https://codecov.io/gh/ignat-z/log-analyzer/branch/main/graph/badge.svg?token=25KPDEY59D)](https://codecov.io/gh/ignat-z/log-analyzer)
+
 This app is a simple log analyzer. It uses [MapReduce model](<https://en.wikipedia.org/wiki/MapReduce>) to process data. It provides reusable components to combine them into a MapReduce pipeline. It's not parallelized but can be.
 
 ## Component groups:
