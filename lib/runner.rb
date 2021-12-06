@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './lib/page_views_job'
+require './lib/path_views_job'
 require './lib/job_runner'
 
 # This is the main class that does all the work.
@@ -10,7 +10,7 @@ class Runner
   end
 
   def call
-    job = PageViewsJob.new(@path)
+    job = PathViewsJob.new(@path)
     JobRunner.new(job).call
   end
 end

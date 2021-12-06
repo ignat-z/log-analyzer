@@ -8,8 +8,8 @@ require './lib/output_formatters/by_value_formatter'
 require './lib/input_formatters/readlines_formatter'
 require './lib/inputs/file_input'
 
-# This job calculates the number of page views for each path
-class PageViewsJob
+# This job calculates the number of path views for each path
+class PathViewsJob
   VISITS_REPORTER = lambda do |result|
     result.each { |path, count| puts "#{path} #{count} visits" }
   end
