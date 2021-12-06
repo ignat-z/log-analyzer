@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
+require './test/test_helper'
 require 'output_formatters/by_value_formatter'
 
 describe ByValueFormatter do

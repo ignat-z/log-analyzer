@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
+require './test/test_helper'
 require './lib/collectors/single_value_collector'
 
 describe SingleValueCollector do

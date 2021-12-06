@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
+require './test/test_helper'
 require './lib/reducers/values_sum_reducer'
 
 describe ValuesSumReducer do

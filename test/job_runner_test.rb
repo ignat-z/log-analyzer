@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'ostruct'
-require 'minitest/autorun'
+require './test/test_helper'
 require './test/lib/fake_job'
 require './lib/job_runner'
 
