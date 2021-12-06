@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require './lib/jobs/base_job'
 require './lib/collectors/set_collector'
 require './lib/collectors/single_value_collector'
 require './lib/reducers/values_length_reducer'
@@ -9,12 +10,13 @@ require './lib/input_formatters/readlines_formatter'
 require './lib/inputs/file_input'
 
 # This job calculates the number of unique path views for each path
-class PathUniqueViewsJob
+class PathUniqueViewsJob < BaseJob
   UNIQUE_VISITS_REPORTER = lambda do |result|
     result.each { |path, count| puts "#{path} #{count} unique visits" }
   end
 
   def initialize(path)
+    super()
     @path = path
   end
 
