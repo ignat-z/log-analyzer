@@ -18,5 +18,6 @@ require 'minitest/hell'
 module Minitest
   class Test
     parallelize_me!
+    prove_it!
   end
 end

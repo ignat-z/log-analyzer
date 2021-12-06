@@ -3,6 +3,9 @@ GEM
   specs:
     ast (2.4.2)
     docile (1.4.0)
+    minitest (5.14.4)
+    minitest-proveit (1.0.0)
+      minitest (> 5, < 7)
     parallel (1.21.0)
     parser (3.0.3.1)
       ast (~> 2.4.1)
@@ -33,6 +36,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  minitest-proveit
   rubocop
   simplecov
 
